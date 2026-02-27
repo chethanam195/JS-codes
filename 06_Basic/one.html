@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+<li>
+  <img width="200px" id="eagle"
+    src="https://images.pexels.com/photos/349758/hawk-bird-bald-eagle-raptor-349758.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+    alt="eagle">
+</li>
+
+<li>
+  <img width="200px" id="sparrow"
+    src="https://images.pexels.com/photos/326900/pexels-photo-326900.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+    alt="sparrow">
+</li>
+
+<li>
+  <img width="200px" id="owl"
+    src="https://images.pexels.com/photos/86596/owl-bird-eyes-eagle-owl-86596.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+    alt="owl">
+</li>
+<li><a href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('sparrow').onclick=function(){
+    //     alert("owl clicked")
+    // }
+    // attachEvent
+    // Jquery - on using and add of the eventlistener
+    document.getElementById('sparrow').addEventListener('click',function(e){
+        console.log(e)},false)
+        //type,timestamp,defaultPrevented
+        // toelement,target,sourcelement,currentTarget
+        // clientX,ClientY,screenX,ScreenY
+        // altkey,ctrlkey,shiftkey,keycode
+
+        //event Propagation what is the true and false and event bubbling and event capaturing
+//  document.getElementById('images').addEventListener('click',function(e){
+//         console.log("clicked inside the ul")},false)
+//          document.getElementById('owl').addEventListener('click',function(e){
+//         console.log("owl is clicked")
+//         e.stopPropagation},false)
+        // document.getElementById('google').addEventListener('click',function(e){
+        //     e.preventDefault
+        // e.stopPropagationS},false)
+        
+
+// if click on the image i wanted move away
+document.querySelector('#images').addEventListener
+('click',function(e){
+    console.log(e.target.tagName)
+    if(e.targe.tagName ==='IMG'){
+        console.log(e.target.id)
+    
+        let removeIt=e.target.parentNode
+        removeIt.remove()
+    }
+    // removeIt.parentNode.removeChild(removeIt)
+})
+</script>
+</html>

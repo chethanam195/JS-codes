@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code with chethana</title>
+</head>
+<body>
+    <h1>Code with Chethana</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("Chethana")
+    // },2000)
+    const saychethana=function(){
+        console.log("chethana")
+    }
+    const changeText=function(){
+        document.querySelector('h1').innerHTML="best js codes"
+    }
+    const changeme=setTimeout(changeText, 2000)
+    // clearTimeout(changeme)
+document.queryselector("#stop").addEventListener('click',function(){
+    clearTimeout(changeme)
+})
+
+    // document.querySelector('h1').innerHTML="best js codes"
+</script>
+</html>
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+<button id="red">red button</button>
+<button id="yellow">Yellow Button</button>
+  
+</body>
+<script>
+//   function init() {
+//      let name = "Mozilla"; // name is a local variable created by init
+//      function displayName() {
+//     // displayName() is the inner function, that forms a closure
+//     console.log(name); // use variable declared in the parent function
+//   }
+//   displayName();
+// }
+// init();
+
+function outer(){
+    let username="chethana"
+    function inner(){
+        console.log("inner",username);
+    }
+    function innertwo(){
+        console.log("innertwo",username)
+    }
+    inner()
+    innertwo()
+}
+//console.log("Too Outer",username)
+</script>
+
+<script>
+// document.getElementById('red').onclick=function(){
+//     document.body.style.backgroundColor=`red`
+// }
+// document.getElementById('yellow').onclick=function(){
+//     document.body.style.backgroundColor=`yellow`
+// }
+
+function clickhandler(color){
+// document.body.style.backgroundColor=`${color}`
+return function(){
+    document.body.style.backgroundColor=`${color}`
+}
+}
+
+document.getElementById('red').onclick=clickhandler("red")
+document.getElementById('yellow').onclick=clickhandler("yellow")
+
+
+</script>
+</html>
